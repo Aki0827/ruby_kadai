@@ -11,6 +11,7 @@ end
 
 # Q1. 以下の配列から、期待された結果の配列を作成してください　（完了）
 # [1, 2, 3, 4, 5] => [1, 3, 5, 7, 9]
+
 def q1
   puts __method__ 
   arr1 = [1,2,3,4,5] 
@@ -20,6 +21,7 @@ end
 
 # Q2. 以下の配列から、期待された結果の配列を作成してください　（完了）
 #["田中", "佐藤", "佐々木", "高橋"] => ["田中", "佐藤", "佐々木", "高橋", "斎藤"]
+
 def q2
   puts __method__
   users = ["田中", "佐藤", "佐々木", "高橋"]
@@ -42,6 +44,7 @@ end
 #Q4. 以下の二つの配列を合体させた新しい配列を作成してください　（完了）
 #["dog", "cat", "fish"]
 #["bird", "bat", "tiger"]
+
 def q4
   puts __method__
   arr_1 = ["dog", "cat", "fish"]
@@ -52,6 +55,7 @@ def q4
 end
 
 #Q5. 以下の配列の中に3がいくつあるか数えるコードを書いてください　（完了）
+
 def q5
   puts __method__
   arr_1 = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9]
@@ -60,6 +64,7 @@ def q5
 end
 
 #Q6. 配列が空であればtrue、1つ以上の要素があればfalseを返すコードを書いてください （完了） 
+
 def q6(arr)
   puts __method__
   #検証用
@@ -69,6 +74,7 @@ def q6(arr)
 end
 
 #Q7. 配列であればtrue、配列でなければfalseを返すコードを書いてください （完了）
+
 def q7(input)
   puts __method__
   #検証用
@@ -97,6 +103,7 @@ end
 # 会員No.2 佐藤さん
 # 会員No.3 佐々木さん
 # 会員No.4 高橋さん
+
 def q9
   puts __method__
   members = ["田中", "佐藤", "佐々木", "高橋"]
@@ -107,6 +114,7 @@ def q9
 end
 
 #Q10. 以下の配列の最後に山下を追加してください （完了）
+
 def q10
   puts __method__
   members = ["田中", "佐藤", "佐々木", "高橋"]
@@ -191,9 +199,10 @@ end
 
 def q16
   puts __method__
+  puts 'ユーザーの趣味一覧'
   hobbys = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
-  
-  hobbys.each.with_index(1) do |hobby, i|
+  hobbys_uniq = hobbys.flatten.uniq
+  hobbys_uniq.each.with_index(1) do |hobby, i|
     puts "No#{i} #{hobby}"
   end
   fin
@@ -204,17 +213,64 @@ q16
 ## Q17. 以下のハッシュから name の値を取り出してください
 # {name: "satou", age: 33}
 
+def q17
+  puts __method__
+  user = {name: "satou", age: 33}
+  puts user[:name]
+  fin
+end
+
+q17
+
 ## Q18. 以下のハッシュから name の値を取り出して下さい
 # {user: {name: "satou", age: 33}}
+
+def q18
+  puts __method__
+  user = {user: {name: "satou", age: 33}}
+  puts user[:user][:name]
+  fin
+end
+
+q18
 
 ## Q19. 以下の既存で存在する user_data に対して、 update_data の内容を反映させ user_data の内容を書き換えて下さい
 # user_data = {name: "神里", age: 31, address: "埼玉"}
 # update_data = {age: 32, address: "沖縄"}
+
+def q19
+  puts __method__
+  user_data = {name: "神里", age: 31, address: "埼玉"}
+  update_data = {age: 32, address: "沖縄"}
+
+  update_data.each do |k, v|
+    #TODO 存在しない場合のエラー処理
+    user_data[k] = v
+  end
+  p user_data
+  fin
+end
+
+q19
 
 ## Q20. 以下の全てのハッシュの name と age の値を取り出し、「私の名前は〜です年齢は〜歳です」と表示してください
 # {name: "satou", age: 22}
 # {name: "yamada", age: 12}
 # {name: "takahashi", age: 32}
 # {name: "nakamura", age: 41}
+
+def q20
+  puts __method__
+  users = [
+  {name: "satou", age: 22},
+  {name: "yamada", age: 12},
+  {name: "takahashi", age: 32},
+  {name: "nakamura", age: 41}]
+  fin
+end
+
+q20
+
+
 
 
