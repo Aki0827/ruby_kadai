@@ -15,11 +15,11 @@
 | Q8         |   Completed |         12/16|        
 | Q9         |   Completed |         12/16|        
 | Q10        |   Completed |         12/16|        
-| Q11        |      Review |              |        
-| Q12        |      Review |              |        
-| Q13        |      Review |              |        
-| Q14        |      Review |              |        
-| Q15        |      Review |              |        
+| Q11        |   Completed |         12/17|        
+| Q12        |   Completed |         12/17|        
+| Q13        |   Completed |         12/17|        
+| Q14        |   Completed |         12/17|  
+| Q15        |   Completed |         12/17|    
 | Q16        |  Not Started|              |        
 | Q17        |  Not Started|              |        
 | Q18        |  Not Started|              |        
