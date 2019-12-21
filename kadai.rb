@@ -236,14 +236,15 @@ def q19
   puts __method__
   user_data = {name: "神里", age: 31, address: "埼玉"}
   update_data = {age: 32, address: "沖縄"}
-
-  update_data.each do |k, v|
-    user_data[k] = v
-    #TODO 存在しない場合のエラー処理
-  end
+  user_data.update(update_data)
+  # update_data.each do |k, v|
+  #   user_data[k] = v
+  # end
   p user_data
   fin
 end
+
+q19
 
 ## Q20. 以下の全てのハッシュの name と age の値を取り出し、「私の名前は〜です年齢は〜歳です」と表示してください
 # {name: "satou", age: 22}
@@ -265,13 +266,17 @@ def q20
   fin
 end
 
-
 def exex
   q16
   q17
   q18
   q19
   q20
+  # q21
+  # q22
+  # q23
+  # q24
+  # q25
 end
 
 exex
