@@ -20,11 +20,11 @@
 | Q13        |   Completed |         12/17|        
 | Q14        |   Completed |         12/17|  
 | Q15        |   Completed |         12/17|    
-| Q16        |  Not Started|              |        
-| Q17        |  Not Started|              |        
-| Q18        |  Not Started|              |        
-| Q19        |  Not Started|              |        
-| Q20        |  Not Started|              |        
+| Q16        |       Review|              |        
+| Q17        |       Review|              |        
+| Q18        |       Review|              |        
+| Q19        |       Review|              |        
+| Q20        |       Review|              |        
 | Q21        |  Not Started|              |        
 | Q22        |  Not Started|              |        
 | Q23        |  Not Started|              |        
@@ -41,5 +41,4 @@
 | Q34        |  Not Started|              |        
 | Q35        |  Not Started|              |        
 | Q36        |  Not Started|              |        
-| Q37        |  Not Started|              |        
-
+| Q37        |  Not Started|              |

@@ -208,8 +208,6 @@ def q16
   fin
 end
 
-q16
-
 ## Q17. 以下のハッシュから name の値を取り出してください
 # {name: "satou", age: 33}
 
@@ -219,8 +217,6 @@ def q17
   puts user[:name]
   fin
 end
-
-q17
 
 ## Q18. 以下のハッシュから name の値を取り出して下さい
 # {user: {name: "satou", age: 33}}
@@ -232,8 +228,6 @@ def q18
   fin
 end
 
-q18
-
 ## Q19. 以下の既存で存在する user_data に対して、 update_data の内容を反映させ user_data の内容を書き換えて下さい
 # user_data = {name: "神里", age: 31, address: "埼玉"}
 # update_data = {age: 32, address: "沖縄"}
@@ -244,14 +238,12 @@ def q19
   update_data = {age: 32, address: "沖縄"}
 
   update_data.each do |k, v|
-    #TODO 存在しない場合のエラー処理
     user_data[k] = v
+    #TODO 存在しない場合のエラー処理
   end
   p user_data
   fin
 end
-
-q19
 
 ## Q20. 以下の全てのハッシュの name と age の値を取り出し、「私の名前は〜です年齢は〜歳です」と表示してください
 # {name: "satou", age: 22}
@@ -262,15 +254,27 @@ q19
 def q20
   puts __method__
   users = [
-  {name: "satou", age: 22},
-  {name: "yamada", age: 12},
-  {name: "takahashi", age: 32},
-  {name: "nakamura", age: 41}]
+    {name: "satou", age: 22},
+    {name: "yamada", age: 12},
+    {name: "takahashi", age: 32},
+    {name: "nakamura", age: 41}
+  ]
+  users.each do |user|
+    puts "私の名前は#{user[:name]}です。年齢は#{user[:age]}歳です"
+  end
   fin
 end
 
-q20
 
+def exex
+  q16
+  q17
+  q18
+  q19
+  q20
+end
+
+exex
 
 
 
