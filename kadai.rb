@@ -266,17 +266,105 @@ def q20
   fin
 end
 
+## Q21. 以下の配列から全てのキーを取り出してターミナルに出力してください
+# {name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com"}
+
+def q21
+  puts __method__
+  user_info = {name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com"}
+  puts "全てのKeyを出力します"
+  puts user_info.keys
+  fin
+end
+
+## Q22. ハッシュを格納した以下の配列を使用し、期待した結果になるようにコードを書いてください
+# users = [
+# {name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com"},
+# {},
+# {name: "yamada", age: 22, address: "tokyo", hobby: "soccer", email: "hoge@fuga.com"},
+# {},
+# {name: "suzuki", age: 44, address: "yamaguchi", hobby: "baseball", email: "hoge@fuga.com"}
+# ]
+# 期待結果
+# ハッシュにデータがある場合：No〜 名前〜、年齢〜、趣味〜、メール〜
+# ハッシュがからの場合：データなし
+
+def q22
+  puts __method__
+  users = [
+    {name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com"},
+    {},
+    {name: "yamada", age: 22, address: "tokyo", hobby: "soccer", email: "hoge@fuga.com"},
+    {},
+    {name: "suzuki", age: 44, address: "yamaguchi", hobby: "baseball", email: "hoge@fuga.com"}
+  ]
+
+  users.each.with_index(1) do |user, i|
+    if user.empty?
+      puts  "No:#{i} データなし"
+    else
+      puts "No:#{i} 名前:#{user[:name]},年齢:#{user[:age]},趣味:#{user[:hobby]},メール:#{user[:email]}"
+    end
+  end
+  fin
+end
+
+## Q23. 以下のハッシュをキー、バリュー含め全て配列に変換してください
+# {name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com"}
+# 変換後の配列
+# [:name, "satou", :age, 33, :address, "saitama", :hobby, "soccer", :email, "hoge@fuga.com"]
+
+def q23
+  puts __method__
+  hash = {name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com"}
+  p hash.flatten
+  fin
+end
+
+## Q24. 以下のハッシュにおいて `age` というキーが含まれている場合は `OK` 、含まれていない場合は `NG` が表示されるようにしてください
+# { name: "saitou", hobby: "soccer", age: 33, role: "admin" }
+# { name: "yamada", hobby: "baseball", role: "normal" }
+
+def q24
+  puts __method__
+  user_1 = { name: "saitou", hobby: "soccer", age: 33, role: "admin" }
+  user_2 = { name: "yamada", hobby: "baseball", role: "normal" }
+
+  # key? = has_key? = include? = member?
+  # https://ref.xaio.jp/ruby/classes/hash/has_key
+  puts user_1.key?(:age) ? "OK" : "NG"
+  puts user_2.has_key?(:age) ? "OK" : "NG"
+  fin
+end
+
+## Q25.  配列 `keys` の各要素を、ハッシュ `user` がキーとして保持するかどうかを判定するコードを書いてください
+# keys = [:age, :name, :hobby, :address]
+# user = { name: "saitou", hobby: "soccer", age: 33, role: "admin" }
+# 例（意図が伝われば文章は自由に変えていただいて大丈夫です）
+# userにはageというキーがあります# userにはaddressというキーがありません
+
+def q25
+  puts __method__
+  keys = [:age, :name, :hobby, :address]
+  user = { name: "saitou", hobby: "soccer", age: 33, role: "admin" }
+
+  keys.each do |key|
+    if user.include?(key)
+      puts "userには「Key:#{key}」があります"
+    else
+      puts "userには「Key:#{key}」がありません"
+    end
+  end
+  fin
+end
+
+
 def exex
-  q16
-  q17
-  q18
-  q19
-  q20
-  # q21
-  # q22
-  # q23
-  # q24
-  # q25
+  q21
+  q22
+  q23
+  q24
+  q25
 end
 
 exex

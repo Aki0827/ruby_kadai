@@ -20,16 +20,16 @@
 | Q13        |   Completed |         12/17|        
 | Q14        |   Completed |         12/17|  
 | Q15        |   Completed |         12/17|    
-| Q16        |       Review|              |        
-| Q17        |       Review|              |        
-| Q18        |       Review|              |        
-| Q19        |       Review|              |        
-| Q20        |       Review|              |        
-| Q21        |  Not Started|              |        
-| Q22        |  Not Started|              |        
-| Q23        |  Not Started|              |        
-| Q24        |  Not Started|              |        
-| Q25        |  Not Started|              |        
+| Q16        |   Completed |         12/22|        
+| Q17        |   Completed |         12/22|        
+| Q18        |   Completed |         12/22|        
+| Q19        |   Completed |         12/22|        
+| Q20        |   Completed |         12/22|        
+| Q21        |      Review |              |        
+| Q22        |      Review |              |        
+| Q23        |      Review |              |        
+| Q24        |      Review |              |        
+| Q25        |      Review |              |        
 | Q26        |  Not Started|              |        
 | Q27        |  Not Started|              |        
 | Q28        |  Not Started|              |        
