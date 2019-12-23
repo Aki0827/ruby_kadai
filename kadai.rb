@@ -244,8 +244,6 @@ def q19
   fin
 end
 
-q19
-
 ## Q20. 以下の全てのハッシュの name と age の値を取り出し、「私の名前は〜です年齢は〜歳です」と表示してください
 # {name: "satou", age: 22}
 # {name: "yamada", age: 12}
@@ -322,8 +320,6 @@ def q23
 end
 
 ## Q24. 以下のハッシュにおいて `age` というキーが含まれている場合は `OK` 、含まれていない場合は `NG` が表示されるようにしてください
-# { name: "saitou", hobby: "soccer", age: 33, role: "admin" }
-# { name: "yamada", hobby: "baseball", role: "normal" }
 
 def q24
   puts __method__
@@ -358,16 +354,124 @@ def q25
   fin
 end
 
+## Q26. 以下の２つのハッシュを合体させた新しいハッシュを作成してください
+
+def q26
+  puts __method__
+  hash_1 = {C: "printf", COBOL: "DISPLAY", Go: "fmt.Print", Java: "System.out.println"}
+  hash_2 = {JavaScript: "console.log", R: "print", Ruby: "puts"}
+  p hash_1.merge(hash_2)
+  fin
+end
+
+## Q27. 名前、年齢、性別、管理者権限の情報を持ったユーザークラスを定義してインスタンスを作成してください
+# 管理者権限の有無はtrueかfalseで表してください
+
+class User
+  def initialize(params)
+    @name   = params[:name]
+    @age    = params[:age]
+    @gender = params[:gender]
+    @admin  = params[:admin]
+  end
+
+  def info
+    puts "名前：#{@name}"
+    puts "年齢：#{@age}"
+    puts "性別：#{@gender}"
+    puts @admin ? "管理者権限：有り" : "管理者権限：無し"
+  end
+end
+
+def q27
+  puts __method__
+  user0 = User.new(name: "Aki", age: 37, gender: "男", admin: true)
+  user0.info
+  fin
+end
+
+## Q28.作成した Userクラスからインスタンスを生成、 infoメソッド を実行し、目標の出力になるようにコードを書き足してください
+# user1 = User.new(name: "神里", age: 32, gender: "男", admin: true)
+# user2 = User.new(name: "あじー", age: 32, gender: "男", admin: false)
+
+def q28
+  puts __method__
+  user1 = User.new(name: "神里", age: 32, gender: "男", admin: true)
+  user2 = User.new(name: "あじー", age: 32, gender: "男", admin: false)
+
+  user1.info
+  fin
+  user2.info
+  fin
+end
+
+## Q29.次のようなコードを書いて、目標の出力になるようなUserクラスを定義してください
+# ただし、今回は attr_accessor attr_reader attr_writer は使用しないでください
+# 出力結果
+# あじー
+# tanakin
+
+class User_q29
+  def initialize(params)
+    @name   = params[:name]
+  end
+
+  def name #ゲッター（インスタンス変数をクラス内から参照するメソッド）
+    @name
+  end
+
+  def name=(new_name) #セッター（インスタンス変数をクラス内で更新するメソッド）
+    @name = new_name
+  end
+end
+
+def q29
+  puts __method__
+  user = User_q29.new(name: "あじー")
+  puts user.name
+  user.name = "tanakin"
+  puts user.name
+  fin
+end
+
+## Q30. 以下のようなコードを書いて、期待した出力になるようなUserクラスを定義してください
+# user = User.new(name: "あじー", age: 32)
+# puts user.introduce
+# user2 = User.new(name: "ゆたぼん", age: 10)
+# puts user2.introduce
+# 期待する出力結果
+# こんにちは、あじーと申します宜しくお願いいたします
+# はいさいまいど〜、ゆたぼんです！！！
+
+class User_q30
+  attr_accessor :name, :age # = getter+setter
+
+  def initialize(params)
+    @name   = params[:name]
+    @age    = params[:age]
+  end
+
+  def introduce
+    age > 20 ? "こんにちは、#{@name}と申します。宜しくお願いいたします" : "はいさいまいど〜、#{@name}です！！！"
+  end
+end
+
+def q30
+  puts __method__
+  user = User_q30.new(name: "あじー", age: 32)
+  puts user.introduce
+  
+  user2 = User_q30.new(name: "ゆたぼん", age: 10)
+  puts user2.introduce
+  fin
+end
 
 def exex
-  q21
-  q22
-  q23
-  q24
-  q25
+  q26
+  q27
+  q28
+  q29
+  q30
 end
 
 exex
-
-
-
