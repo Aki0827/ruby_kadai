@@ -376,10 +376,14 @@ class User
   end
 
   def info
-    puts "名前：#{@name}"
-    puts "年齢：#{@age}"
-    puts "性別：#{@gender}"
-    puts @admin ? "管理者権限：有り" : "管理者権限：無し"
+    admin = @admin ? "有り" : "無し"
+    # How to use heardoc https://www.rubyguides.com/2018/11/ruby-heredoc/ 
+    puts <<~EOL
+      "名前：#{@name}"
+      "年齢：#{@age}"
+      "性別：#{@gender}"
+      "管理者権限：#{admin}"
+    EOL
   end
 end
 
@@ -444,15 +448,14 @@ end
 # はいさいまいど〜、ゆたぼんです！！！
 
 class User_q30
-  attr_accessor :name, :age # = getter+setter
-
+  # attr_accessor :name, :age # = getter+setter(不要)
   def initialize(params)
     @name   = params[:name]
     @age    = params[:age]
   end
 
   def introduce
-    age > 20 ? "こんにちは、#{@name}と申します。宜しくお願いいたします" : "はいさいまいど〜、#{@name}です！！！"
+    @age > 20 ? "こんにちは、#{@name}と申します。宜しくお願いいたします" : "はいさいまいど〜、#{@name}です！！！"
   end
 end
 
@@ -460,7 +463,7 @@ def q30
   puts __method__
   user = User_q30.new(name: "あじー", age: 32)
   puts user.introduce
-  
+
   user2 = User_q30.new(name: "ゆたぼん", age: 10)
   puts user2.introduce
   fin
