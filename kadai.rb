@@ -378,12 +378,12 @@ class User
   def info
     admin = @admin ? "有り" : "無し"
     # How to use heardoc https://www.rubyguides.com/2018/11/ruby-heredoc/ 
-    puts <<~EOL
+    puts <<~TEXT
       "名前：#{@name}"
       "年齢：#{@age}"
       "性別：#{@gender}"
       "管理者権限：#{admin}"
-    EOL
+    TEXT
   end
 end
 
